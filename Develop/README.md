@@ -1,7 +1,7 @@
 
 # README GENERATOR
 -------------------------
-![ Profile-Picture](https://avatars1.githubusercontent.com/u/59778940?v=4)
+![Profile-Picture](https://avatars1.githubusercontent.com/u/59778940?v=4)
 -------------------------
 ## Project Title
 -------------------------
