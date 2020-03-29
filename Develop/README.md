@@ -5,11 +5,11 @@
 -------------------------
 ## Project Title
 
-Font finder app
+* Font-Finder 
 -------------------------
 ## Description
 
-This application allows you to search fonts/font-families using your smart phone camera
+* This application allows you to search fonts/font-families using your smart phone camera 
 ------------------------- 
 ## Table of Contents
 * [Installation](#Installation)
@@ -21,25 +21,25 @@ This application allows you to search fonts/font-families using your smart phone
 ---------------------------
 ## Installation
 
-download from the app store
+#### Download from the app store 
 ---------------------------
 ## Usage
 
-For finding fonts 
+#### For finding fonts via camera
 ---------------------------
 ## License
 
-Not to be recreated for personal use
+#### Not to be recreated 
 ---------------------------
 ## Contributing
 
-undefined
+#### No contributors 
 ---------------------------
 ## Tests
 
-See test folder located in the code
+#### See develop folder 
 ---------------------------
 ## Questions
----------------------------
-Please email me for any questions
+
+#### Please email all questions
             

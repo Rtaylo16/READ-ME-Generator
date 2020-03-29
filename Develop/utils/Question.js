@@ -37,7 +37,7 @@ const questions = [{
         {
         type: "input",
         message: "Enter in Contributions",
-        name: "Contrubuting"
+        name: "Contributions"
         },
     
         {

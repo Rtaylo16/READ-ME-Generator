@@ -1,7 +1,7 @@
 # Read Me Generator
 
 ## Demo
-![Demo](/Develop/demo.gif)
+![Demo](demo.gif)
 
 ## Description 
 Allows the user through the use of node.js to generate a readme through a series prompts.

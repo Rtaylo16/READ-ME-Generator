@@ -23,7 +23,7 @@ const syntax = require("./utils/generateMarkdown.js")
 
 
 
-inquirer.prompt(questions, api).then(function({username,License,Usage,Installation,Tests,Questions,Description,ProjectTitle,Contributing}) {
+inquirer.prompt(questions, api).then(function({username,License,Usage,Installation,Tests,Questions,Description,ProjectTitle,Contributions}) {
     const queryUrl = `https://api.github.com/users/${username}`;
         axios.get(queryUrl).then(function({data}) {
             
@@ -32,16 +32,16 @@ inquirer.prompt(questions, api).then(function({username,License,Usage,Installati
             const email = data.email;
             let yes = `
 # README GENERATOR
--------------------------
-![ Profile-Picture](${profilepic})
+
+![Profile-Picture](${profilepic})
 -------------------------
 ## Project Title
--------------------------
-${ProjectTitle}
+
+* ${ProjectTitle} 
 -------------------------
 ## Description
--------------------------
-${Description}
+
+* ${Description} 
 ------------------------- 
 ## Table of Contents
 * [Installation](#Installation)
@@ -52,28 +52,28 @@ ${Description}
 * [Questions](#Questions)
 ---------------------------
 ## Installation
----------------------------
-${Installation}
+
+#### ${Installation} 
 ---------------------------
 ## Usage
----------------------------
-${Usage}
+
+#### ${Usage}
 ---------------------------
 ## License
----------------------------
-${License}
+
+#### ${License} 
 ---------------------------
 ## Contributing
----------------------------
-${Contributing}
+
+#### ${Contributions} 
 ---------------------------
 ## Tests
----------------------------
-${Tests}
+
+#### ${Tests} 
 ---------------------------
 ## Questions
----------------------------
-${Questions}
+
+#### ${Questions}
             `;
 
             fs.writeFile("README.md", yes, function(err) {
