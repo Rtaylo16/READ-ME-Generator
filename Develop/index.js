@@ -1,6 +1,10 @@
 const fs = require("fs");
 const axios = require("axios");
 const inquirer = require("inquirer");
+const api = require("./utils/api.js");
+const questions = require("./utils/Question.js");
+const syntax = require("./utils/generateMarkdown.js")
+
 
 
 // const questions = [
@@ -15,102 +19,74 @@ const inquirer = require("inquirer");
 
 // init();
 
-    inquirer
-    .prompt ({
-    message: 'Enter your GitHub username: ',
-        name: 'username'
-        })
 
-        .then(function({username}) {
-        const queryUrl = `https://api.github.com/users/${username}`;
-        axios.get(queryUrl).then(function(response) {
-            console.log(response)
+
+
+
+inquirer.prompt(questions, api).then(function({username,License,Usage,Installation,Tests,Questions,Description,ProjectTitle,Contributing}) {
+    const queryUrl = `https://api.github.com/users/${username}`;
+        axios.get(queryUrl).then(function({data}) {
+            
+            console.log(data)
+            const profilepic = data.avatar_url;
+            const email = data.email;
+            let yes = `
+# README GENERATOR
+-------------------------
+![ Profile-Picture](${profilepic})
+-------------------------
+## Project Title
+-------------------------
+${ProjectTitle}
+-------------------------
+## Description
+-------------------------
+${Description}
+------------------------- 
+## Table of Contents
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [License](#License)
+* [Contributing](#Contributing)
+* [Tests](#Tests)
+* [Questions](#Questions)
+---------------------------
+## Installation
+---------------------------
+${Installation}
+---------------------------
+## Usage
+---------------------------
+${Usage}
+---------------------------
+## License
+---------------------------
+${License}
+---------------------------
+## Contributing
+---------------------------
+${Contributing}
+---------------------------
+## Tests
+---------------------------
+${Tests}
+---------------------------
+## Questions
+---------------------------
+${Questions}
+            `;
+
+            fs.writeFile("README.md", yes, function(err) {
+
+                if (err) {
+                    return console.log(err);
+                }
+              
+                console.log("Success!");
+        
+            });
         });
 
-        })
-
-
-
-inquirer
-.prompt ([
-    {
-    type:"input",
-    message: "Enter Project Title",
-    name: "Poject Title"
-    },
-
-    {
-    type:"input",
-    message: "Enter Description",
-    name: "Description"
-    },
-
-    {
-    type:"list",
-    message: "Table of Contents",
-    name: "Table of contents",
-    choices: [
-        "Installation",
-        "Usage",
-        "Credits",
-        "License",
-        "Installation",
-        "Usage",
-        "License",
-        "Contributing",
-        "Tests",
-        "Questions"
-    ]
-    },
-
-    {
-    type: "input",
-    message: "Enter Installation Process",
-    name: "Installation"
-    },
-
-    {
-    type: "input",
-    message: "Enter the Usage",
-    name: "Usage"
-    },
-
-    {
-    type: "input",
-    message: "Enter the License",
-    name: "License"
-    },
-
-    {
-    type: "input",
-    message: "Enter in Contributions",
-    name: "Contrubuting"
-    },
-
-    {
-    type: "input",
-    message: "Enter Tests",
-    name: "Tests"
-    },
-    
-    {
-    type: "input",
-    message: "Enter Questions",
-    name: "Questions"
-    }
-])
-.then(function(data) {
-
-    fs.writeFile("README.md", JSON.stringify(data,null,'\t'), function(err) {
-
-    
-        if (err) {
-            return console.log(err);
-        }
-      
-        console.log("Success!");
     
     
-    
-    });
 });

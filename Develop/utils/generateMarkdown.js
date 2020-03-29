@@ -1,8 +1,8 @@
-function generateMarkdown(data) {
+const syntax = function generateMarkdown(data) {
   return `
 # ${data.title}
 
 `;
 }
 
-module.exports = generateMarkdown;
+module.exports = syntax;
