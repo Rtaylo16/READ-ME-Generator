@@ -1,14 +1,14 @@
 
 # README GENERATOR
--------------------------
+
 ![Profile-Picture](https://avatars1.githubusercontent.com/u/59778940?v=4)
 -------------------------
 ## Project Title
--------------------------
+
 Font finder app
 -------------------------
 ## Description
--------------------------
+
 This application allows you to search fonts/font-families using your smart phone camera
 ------------------------- 
 ## Table of Contents
@@ -20,26 +20,26 @@ This application allows you to search fonts/font-families using your smart phone
 * [Questions](#Questions)
 ---------------------------
 ## Installation
----------------------------
+
 download from the app store
 ---------------------------
 ## Usage
----------------------------
-for finding fonts 
+
+For finding fonts 
 ---------------------------
 ## License
----------------------------
+
 Not to be recreated for personal use
 ---------------------------
 ## Contributing
----------------------------
+
 undefined
 ---------------------------
 ## Tests
----------------------------
+
 See test folder located in the code
 ---------------------------
-##Questions
+## Questions
 ---------------------------
 Please email me for any questions
             
